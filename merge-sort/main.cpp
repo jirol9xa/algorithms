@@ -63,13 +63,13 @@ List sortList(List &lst)
     return mergeLists(first_sorted, second_sorted);
 }
 
-List generateList(int mod_for_up_bnd)
+List generateList(size_t mod_for_up_bnd)
 {
     using std::rand;
 
     List lst;
-    int  upper_bound = rand() % mod_for_up_bnd;
-    for (int i = 0; i < upper_bound; ++i) {
+    auto  upper_bound = rand() % mod_for_up_bnd;
+    for (auto i = 0; i < upper_bound; ++i) {
         lst.push_back(rand() % 100);
     }
 
@@ -114,7 +114,7 @@ int main()
     listDump(third, "third");
 #endif
 
-    List lst = generateList(1000000);
+    List lst = generateList(100000000);
 
     auto start  = std::clock();
     List sorted = sortList(lst);
@@ -124,7 +124,7 @@ int main()
     start = clock();
     lst.sort();
     end = clock();
-    std::cout << "Stfd sort: " << end - start << '\n';
+    std::cout << "Std sort: " << end - start << '\n';
 
     if (!isListsEq(sorted, lst))
         std::cout << "Wrong sort!!!\n";
