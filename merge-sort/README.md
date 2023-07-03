@@ -1,7 +1,7 @@
 # Merge sort
 
 --------------------------------------
-## The main aim: `overtake` std::sort for std::list<int> 
+## The main aim: `overtake` std::sort for std::list<int> on -O3 
 
 --------------------------------------
 
