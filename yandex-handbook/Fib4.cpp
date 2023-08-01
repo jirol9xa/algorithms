@@ -38,10 +38,11 @@ uint64_t calcLastNum(long long int n, long long int m)
 int main()
 {
     uint64_t n = 0;
-    uint64_t m = 0;
-    std::cin >> n >> m;
+    std::cin >> n;
 
-    std::cout << calcLastNum(n % getPeriodLen(m), m);
+    auto mod = calcLastNum((n + 2) % getPeriodLen(10), 10);
+
+    std::cout << mod - 1 + 10 * (mod == 0);
 
     return 0;
 }
