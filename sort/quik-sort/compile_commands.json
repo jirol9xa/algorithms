@@ -1,0 +1,8 @@
+[
+    {
+        "directory": "/home/voffk4/SecondYearDed/MySTL/Vector/tmp",
+        "command":
+            "/usr/bin/c++   -g -fsanitize=address,leak,undefined -Wall -Wextra -Wpedantic -g -O0 -std=c++20 -fdiagnostics-color=always -o CMakeFiles/main.dir/main.cpp.o -c /home/voffk4/SecondYearDed/MySTL/Vector/main.cpp",
+        "file": "/home/voffk4/SecondYearDed/MySTL/Vector/main.cpp"
+    }
+]
