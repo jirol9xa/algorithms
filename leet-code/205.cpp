@@ -32,9 +32,10 @@ class Solution {
         for (int i = 0; i < t.size(); ++i)
             syms_positions2[t[i]].push_back(i);
 
-        for (int i = 'a'; i <= 'z'; ++i) {
-            if (!vecComp(syms_positions1[i], syms_positions2[i]))
-                return false;
+        for (int i = 0; i < s.size(); ++i) {
+            if (!vecComp(syms_positions1[s[i]], syms_positions2[t[i]]))
+                ;
+            return false;
         }
 
         return true;
