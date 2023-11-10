@@ -1,29 +1,21 @@
 #include <iterator>
-#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
 class RandomizedSet {
-    unordered_map<int, int> map;
-    int                     idx = 0;
+    unordered_set<int> set;
+    int                idx = 0;
 
   public:
     RandomizedSet() {}
 
-    bool insert(int val)
-    {
-        if (!map[val]) {
-            map[val]++;
-            return true;
-        }
-
-        return false;
-    }
+    bool insert(int val) { return set.insert(val).second; }
 
     bool remove(int val)
     {
-        if (map[val]) {
-            map[val]--;
+        if (auto iter = set.find(val); iter != set.end()) {
+            set.erase(iter);
             return true;
         }
 
@@ -32,9 +24,9 @@ class RandomizedSet {
 
     int getRandom()
     {
-        auto iter = map.begin();
-        std::advance(iter, idx++ % map.size());
-        return iter->first;
+        auto iter = set.begin();
+        std::advance(iter, std::rand() % set.size());
+        return *iter;
     }
 };
 
